@@ -1,6 +1,6 @@
 # ASCIIDOC-CONVERTOR
 
-A simple tool to convert docs content in a Docusaurus project to asciidoc format.
+A simple script to convert docs content in a Docusaurus project to asciidoc format using the tools [pandoc](https://pandoc.org/index.html) and [kramdown-asciidoc](https://github.com/asciidoctor/kramdown-asciidoc)
 
 ## How to run?
 
