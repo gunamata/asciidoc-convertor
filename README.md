@@ -4,7 +4,7 @@ A simple script to convert docs content in a Docusaurus project to asciidoc form
 
 ## How to run?
 
-Easiest way to run is via docker. Here are the commands.
+Easiest way to run is via docker. Run the docker command below from the root of a docusaurus project. At the end of the run, you should see new folders created with the asciidoc files.
 
 **Windows CMD:**
 
