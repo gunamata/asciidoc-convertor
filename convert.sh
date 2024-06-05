@@ -36,4 +36,5 @@ cp -r ./i18n/zh/docusaurus-plugin-content-docs/current ./kramdown_md_to_asciidoc
 
 
 find ./kramdown_md_to_asciidoc -type f -name "*.md" -exec sh -c 'echo Processing file $1 & kramdoc -o "${1%.md}.adoc" "$1"' _ {} \;
+find ./kramdown_md_to_asciidoc -type f -name "*.adoc" -exec sh -c 'echo Replacing Admonitions in file $1 & admon.sh "$1" ' _ {} \;
 rm ./kramdown_md_to_asciidoc/**/*.md
