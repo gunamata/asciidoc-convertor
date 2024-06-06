@@ -11,11 +11,12 @@ RUN apt-get update && \
 RUN gem install kramdown-asciidoc
 
 # Copy the script into the container
-COPY convert.sh admon.sh /usr/local/bin/
+COPY convert.sh admon.sh collapsible_block.sh /usr/local/bin/
 
 # Set the script as executable
 RUN chmod +x /usr/local/bin/convert.sh \
-             /usr/local/bin/admon.sh
+             /usr/local/bin/admon.sh \
+             /usr/local/bin/collapsible_block.sh
 
 # Set the working directory
 WORKDIR /workspace
