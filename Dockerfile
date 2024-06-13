@@ -3,7 +3,6 @@ FROM ruby:3.1.5-slim-bullseye
 # Install pandoc
 RUN apt-get update && \
     apt-get install -y curl && \
-    apt-get install -y pandoc && \
     apt-get install -y python3 python3-pip && \
     apt-get -y autoclean
 
