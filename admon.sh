@@ -20,7 +20,7 @@ ad_type_map = {
 def admonition_ds2ad(adt):
     # Convert admonitions from Docusaurus to Asciidoctor
     # Named captures are e(everything), y(type), t(title), b(body)
-	p = r'(?P<e>^(\s*):::(?P<y>\w+)(\n|\s|\[)(?P<t>.*?)(?<=\n)(?P<b>.*?)(^(\s*):::))'
+    p = r'(?P<e>^(\s*):::(?P<y>\w+)(\n|\s|\[)(?P<t>.*?)(?<=\n)(?P<b>.*?)(^(\s*):::))'
 
     matches = re.finditer(p, adt, re.MULTILINE | re.DOTALL)
 
