@@ -13,7 +13,7 @@ def tabs_ds2ad(adt):
         (r'<Tabs>', '[tabs]\n====\n'),
         (r'<Tabs groupId=\"([^\"]+)\">', r':tabs-sync-option: \n\n[tabs,sync-group-id=\\1]\n====\n'),
         (r'<TabItem value=\"([^\"]+)\">', r'Tab \\1::'),
-        (r'</TabItem>', ''),
+        (r'</TabItem>\n', ''),
         (r'</Tabs>', '====')
     ]
 
