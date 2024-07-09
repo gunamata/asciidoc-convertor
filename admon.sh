@@ -34,7 +34,7 @@ def admonition_ds2ad(adt):
             ad_title = re.sub(r']', '', ad_title)
         ad_body = match.group('b')
         adt = adt.replace(match.group('e'),
-                          f'[{ad_type}]\n{ad_title}====\n{ad_body}====\n')
+                          f'\n[{ad_type}]\n{ad_title}====\n{ad_body}====\n')
 
     return adt
 
