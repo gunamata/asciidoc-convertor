@@ -14,7 +14,8 @@ find ./kramdown_md_to_asciidoc -type f -name "*.md" -exec sh -c 'echo Replacing 
 find ./kramdown_md_to_asciidoc -type f -name "*.md" -exec sh -c 'echo Converting file $1 & kramdoc -o "${1%.md}.adoc" "$1"' _ {} \;
 find ./kramdown_md_to_asciidoc -type f -name "*.adoc" -exec sh -c 'echo Replacing Admonitions in file $1 & admon.sh "$1" ' _ {} \;
 find ./kramdown_md_to_asciidoc -type f -name "*.adoc" -exec sh -c 'echo Replacing cross reference links in file "$1" && sed -i "s|\\(link:[^ ]*\\)\\.md|\\1.adoc|g" "$1"' _ {} \;
-find ./kramdown_md_to_asciidoc -type f -name "*.js" -exec sh -c 'echo Converting sidebar file $1 & python3 /usr/local/bin/nav.py "$1" ' _ {} \;
+find ./kramdown_md_to_asciidoc -type f \( -name "*sidebars.js" -o -name "*sidebars.json" \) -exec sh -c 'echo Converting sidebar file "$1" && python3 /usr/local/bin/nav.py "$1"' _ {} \;
 
 rm ./kramdown_md_to_asciidoc/**/*.md
 rm ./kramdown_md_to_asciidoc/**/sidebars*.js
+rm ./kramdown_md_to_asciidoc/**/*sidebars.json
