@@ -43,13 +43,21 @@
 ## 4. Tabs with syncing
 
 <Tabs groupId="operating-systems">
-  <TabItem value="win" label="Windows">Use Ctrl + C to copy.</TabItem>
-  <TabItem value="mac" label="macOS">Use Command + C to copy.</TabItem>
+  <TabItem value="win" label="Windows">
+    Use Ctrl + C to copy.
+  </TabItem>
+  <TabItem value="mac" label="macOS">
+    Use Command + C to copy.
+  </TabItem>
 </Tabs>
 
 <Tabs groupId="operating-systems">
-  <TabItem value="win" label="Windows">Use Ctrl + V to paste.</TabItem>
-  <TabItem value="mac" label="macOS">Use Command + V to paste.</TabItem>
+  <TabItem value="win" label="Windows">
+    Use Ctrl + V to paste.
+  </TabItem>
+  <TabItem value="mac" label="macOS">
+    Use Command + V to paste.
+  </TabItem>
 </Tabs>
 
 ## 5. Tabs nested in another element
@@ -66,14 +74,32 @@
           - If you select **Use an existing persistent volume**, choose a **Persistent Volume** from the drop-down.
       1. From the **Customize** section, choose the read/write access for the volume.
       1. Click **Define**.
+      1. Modify `somevalue` afterwards.
 
     </TabItem>
     <TabItem value="Use an existing persistent volume">
 
+      :::note
+
+      TAKE NOTE
+
+      ```
+
       1. Enter a **Name** for the volume claim.
       1. Choose a **Persistent Volume Claim** from the dropdown.
+      1. Add this YAML:
+        ```yaml
+        int: 123
+          string: 'abc' 
+        ```
       1. From the **Customize** section, choose the read/write access for the volume.
       1. Click **Define**.
+
+      Then run the following command:
+
+      ```shell
+      kubectl do something
+      ```
 
     </TabItem>
     </Tabs>
