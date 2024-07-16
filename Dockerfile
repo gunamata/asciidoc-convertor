@@ -10,13 +10,14 @@ RUN apt-get update && \
 RUN gem install kramdown-asciidoc
 
 # Copy the script into the container
-COPY convert.sh admon.sh collapsible_block.sh head_tag.sh tabs.sh /usr/local/bin/
+COPY convert.sh admon.sh collapsible_block.sh head_tag.sh nav.py tabs.sh /usr/local/bin/
 
 # Set the script as executable
 RUN chmod +x /usr/local/bin/convert.sh \
              /usr/local/bin/admon.sh \
              /usr/local/bin/collapsible_block.sh \
              /usr/local/bin/head_tag.sh \
+             /usr/local/bin/nav.py \
              /usr/local/bin/tabs.sh
 
 # Set the working directory
