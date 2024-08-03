@@ -5,8 +5,8 @@ shopt -s globstar
 rm -rf ./kramdown_md_to_asciidoc && \
 mkdir -p ./kramdown_md_to_asciidoc && \
 mkdir -p ./kramdown_md_to_asciidoc/i18n/zh/docusaurus-plugin-content-docs && \
-cp -r ./docs ./shared-files ./sidebars.js ./kramdown_md_to_asciidoc && \
-cp -r ./i18n/zh/docusaurus-plugin-content-docs/current ./kramdown_md_to_asciidoc/i18n/zh/docusaurus-plugin-content-docs
+cp -r ./docs ./shared-files ./sidebars.js ./versioned_docs ./versioned_sidebars ./kramdown_md_to_asciidoc && \
+cp -r ./i18n/zh/docusaurus-plugin-content-docs ./kramdown_md_to_asciidoc/i18n/zh
 
 find ./kramdown_md_to_asciidoc -type f \( -name "*.md" -o -name "*.mdx" \) -exec sh -c 'echo Processing Head tag in file $1 & head_tag.sh "$1" "antora"' _ {} \;
 find ./kramdown_md_to_asciidoc -type f -name "*.md" -exec sh -c 'echo Replacing Collapsible blocks in file $1 & collapsible_block.sh "$1" ' _ {} \;
