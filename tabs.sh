@@ -10,14 +10,14 @@ import sys
 def tabs_ds2ad(adt):
     # Convert tabs from Docusaurus to Asciidoctor
     replacements = [
-        (r'(\+)*<Tabs>(\+)*', '\n\n[tabs]\n===='),
-        (r'(\+)*<Tabs groupId=\"([^\"]+)\">(\+)*', r'\n\n[tabs,sync-group-id=\\2]\n===='),
-        (r'====(\+)*<TabItem value=\"([^\"]+)\" label=\"([^\"]+)\"( default=\"\")?>(\+)*', r'====\nTab \\3::\n+\n'),
-        (r'====(\+)*<TabItem value=\"([^\"]+)\"( default=\"\")?>(\+)*', r'====\nTab \\2::\n+\n'),
+        (r'(\+)*<Tabs>(\+)*', '\n\n[tabs]\n======'),
+        (r'(\+)*<Tabs groupId=\"([^\"]+)\">(\+)*', r'\n\n[tabs,sync-group-id=\\2]\n======'),
+        (r'======(\+)*<TabItem value=\"([^\"]+)\" label=\"([^\"]+)\"( default=\"\")?>(\+)*', r'======\nTab \\3::\n+\n'),
+        (r'======(\+)*<TabItem value=\"([^\"]+)\"( default=\"\")?>(\+)*', r'======\nTab \\2::\n+\n'),
         (r'(\+)*<TabItem value=\"([^\"]+)\" label=\"([^\"]+)\"( default=\"\")?>(\+)*', r'\n\nTab \\3::\n+\n'),
         (r'(\+)*<TabItem value=\"([^\"]+)\"( default=\"\")?>(\+)*', r'\n\nTab \\2::\n+\n'),
         (r'(\+)*</TabItem>(\+)*', ''),
-        (r'(\+)*</Tabs>(\+)*', '\n====')
+        (r'(\+)*</Tabs>(\+)*', '\n======')
     ]
 
     for pattern, replacement in replacements:
