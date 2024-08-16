@@ -10,11 +10,11 @@ import sys
 def replace_match(match):
     summary_text = match.group(1)
     detail_content = match.group(2).strip()
-    return f\".{summary_text}\n[%collapsible]\n====\n{detail_content}\n====\"
+    return f\".{summary_text}\n[%collapsible]\n======\n{detail_content}\n======\"
 
 def collapsible_blocks_ds2ad(adt):
     # Convert collapsible blocks from Docusaurus to Asciidoctor
-    pattern = re.compile(r'<details id=\"[^\"]+\">\s*<summary>([^<]+)</summary>\s*([\s\S]*?)\s*</details>')
+    pattern = re.compile(r'<details(?:\s+id=\"[^\"]+\")?>\s*<summary>([^<]+)</summary>\s*([\s\S]*?)\s*</details>')
     modified_content = pattern.sub(replace_match, adt)
 
     return modified_content
